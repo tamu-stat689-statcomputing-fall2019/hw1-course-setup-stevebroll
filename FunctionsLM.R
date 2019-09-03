@@ -8,8 +8,8 @@
 generateY <- function(X, beta, sigma, seed = 5832652){
   #[ToDo] Set seed and generate Y following linear model
   set.seed(seed) # set seed from given integer
-  n = length(beta) # find n value to be used in rnorm call for epsilon
-  epsilon = rnorm(n, mean = 0, sd = sigma) # generate n length epsilon vector
+  p = length(beta) # find p value to be used in rnorm call for epsilon
+  epsilon = rnorm(p, mean = 0, sd = sigma) # generate p length epsilon vector
   Y = X%*%beta + epsilon # compute Y = Xbeta + epsilon
   # Return Y
   return(Y)
