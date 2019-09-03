@@ -7,10 +7,10 @@
 # seed  - starting seed value
 generateY <- function(X, beta, sigma, seed = 5832652){
   #[ToDo] Set seed and generate Y following linear model
-  set.seed(seed)
-  n = length(beta)
-  epsilon = rnorm(n, mean = 0, sd = sigma)
-  Y = X%*%beta + epsilon
+  set.seed(seed) # set seed from given integer
+  n = length(beta) # find n value to be used in rnorm call for epsilon
+  epsilon = rnorm(n, mean = 0, sd = sigma) # generate n length epsilon vector
+  Y = X%*%beta + epsilon # compute Y = Xbeta + epsilon
   # Return Y
   return(Y)
 }
