@@ -10,7 +10,7 @@ generateY <- function(X, beta, sigma, seed = 5832652){
   set.seed(seed) # set seed from given integer
   p = length(beta) # find p value to be used in rnorm call for epsilon
   epsilon = rnorm(n, mean = 0, sd = sigma) # generate p length epsilon vector
-  Y = X%*%beta + epsilon # compute Y = Xbeta + epsilon
+  Y = X %*% beta + epsilon # compute Y = Xbeta + epsilon
   # Return Y
   return(Y)
 }
@@ -20,7 +20,7 @@ generateY <- function(X, beta, sigma, seed = 5832652){
 # Y -response
 calculateBeta <- function(X, Y){
   # Calculate beta_LS
-  beta_LS = solve(crossprod(X,X)) %*% crossprod(X,Y) # B^ = (X'X)^(-1) * X'Y
+  beta_LS = solve(crossprod(X, X)) %*% crossprod(X, Y) # B^ = (X'X)^(-1) * X'Y
   # Return beta
   return(beta_LS)
 }
